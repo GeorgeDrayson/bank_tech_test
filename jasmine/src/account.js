@@ -4,6 +4,10 @@ function Account(transactionClass = Transaction) {
   this._transactionClass = Transaction
 }
 
+Account.prototype.getStatement = function() {
+  return this._statement
+}
+
 Account.prototype.getBalance = function() {
   return this._balance
 }

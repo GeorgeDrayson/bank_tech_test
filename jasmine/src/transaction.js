@@ -6,14 +6,26 @@ function Transaction(
   this._formatter = formatter
 }
 
-Transaction.prototype.getAmount = function() {
-  return this._amount
+Transaction.prototype.credit = function() {
+  if (this._amount > 0) {
+    return (this._amount.toFixed(2))
+  } else {
+    return null
+  }
+}
+
+Transaction.prototype.debit = function() {
+  if (this._amount < 0) {
+    return (- this._amount).toFixed(2)
+  } else {
+    return null
+  }
 }
 
 Transaction.prototype.getBalance = function() {
   return this._balance
 }
 
-Transaction.prototype.getTransactionDate = function() {
+Transaction.prototype.transactionDate = function() {
   return this._formatter.arrangeDate(this._date)
 }

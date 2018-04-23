@@ -5,6 +5,14 @@ describe("Account", function() {
     account = new Account()
   });
 
+  describe("#getStatement", function() {
+
+    it("Balance is zero at the start", function() {
+      expect(account.getStatement()).toEqual([])
+    });
+
+  });
+
   describe("#getBalance", function() {
 
     it("Balance is zero at the start", function() {
@@ -24,7 +32,7 @@ describe("Account", function() {
     });
 
     it("Pushes a transaction object to the statement array", function() {
-      expect(account._statement.length).toEqual(1);
+      expect(account.getStatement().length).toEqual(1);
     });
 
   });
@@ -41,11 +49,10 @@ describe("Account", function() {
     });
 
     it("Pushes a transaction object to the statement array", function() {
-      expect(account._statement.length).toEqual(2);
+      expect(account.getStatement().length).toEqual(2);
     });
 
     it("Throws an error if you take more than you can", function() {
-      expect(account._statement.length).toEqual(2);
       expect(function(){account.withdraw(1000);}
       ).toThrowError('Insufficient funds')
     });
