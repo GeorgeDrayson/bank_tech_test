@@ -33,3 +33,9 @@ As user,
 So that I can see my money after every deposit/withdrawal,
 I would like to my balance after each transaction.
 ```
+
+## Built With
+
+* [JavaScript](https://www.javascript.com/) - Language
+* [Jasmine](https://jasmine.github.io/) - The testing framework
+* [Atom](https://atom.io/) - Text editor
