@@ -44,6 +44,12 @@ describe("Account", function() {
       expect(account._statement.length).toEqual(2);
     });
 
+    it("Throws an error if you take more than you can", function() {
+      expect(account._statement.length).toEqual(2);
+      expect(function(){account.withdraw(1000);}
+      ).toThrowError('Insufficient funds')
+    });
+
   });
 
 });

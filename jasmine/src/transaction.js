@@ -1,5 +1,5 @@
 function Transaction(
-  amount, balance, date=new Date(), formatter=new DateFormatter()) {
+  amount, balance, formatter=new DateFormatter(), date=new Date()) {
   this._amount = amount
   this._balance = balance
   this._date = date
@@ -15,6 +15,5 @@ Transaction.prototype.getBalance = function() {
 }
 
 Transaction.prototype.getTransactionDate = function() {
-  return formatter.format(date.getDate()) + "/" + formatter.format(date.getMonth())
-   + "/" + date.getFullYear()
+  return this._formatter.arrangeDate(this._date)
 }

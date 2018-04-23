@@ -1,24 +1,22 @@
 describe("Transaction", function() {
   var transaction;
+  var fakeDate;
+  var fakeFormatter;
+
 
   beforeEach(function() {
-    date = jasmine.createSpyObj('date',['getDate','getMonth','getFullYear']);
-    date.getDate.and.returnValue(1);
-    date.getMonth.and.returnValue(1);
-    date.getFullYear.and.returnValue(1999);
-    formatter = jasmine.createSpyObj('formatter',['format']);
-    formatter.format.and.returnValue('01');
-    deposit = new Transaction(1000, 1000, date, formatter);
-    withdrawal = new Transaction(-1000, 0, date, formatter);
+    fakeFormatter = jasmine.createSpyObj('fakeFormatter',['arrangeDate']);
+    deposit = new Transaction(1000, 1000, fakeFormatter);
+    withdrawal = new Transaction(-1000, 0, fakeFormatter);
   });
 
   describe("#getAmount", function() {
 
-    it("returns the amount", function() {
+    it("Returns the amount", function() {
       expect(deposit.getAmount()).toEqual(1000);
     });
 
-    it("can take negative values", function() {
+    it("Can take negative values", function() {
       expect(withdrawal.getAmount()).toEqual(-1000);
     });
 
@@ -26,7 +24,7 @@ describe("Transaction", function() {
 
   describe("#balance", function() {
 
-    it("returns the balance at the time", function() {
+    it("Returns the balance at the time", function() {
       expect(deposit.getBalance()).toEqual(1000);
     });
 
@@ -34,8 +32,9 @@ describe("Transaction", function() {
 
   describe("#date", function() {
 
-    it("saves the time", function() {
-      expect(deposit.getTransactionDate()).toEqual('01/01/1999');
+    it("Saves the time", function() {
+      deposit.getTransactionDate()
+      expect(fakeFormatter.arrangeDate).toHaveBeenCalledWith(deposit._date)
     });
 
   });
