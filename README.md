@@ -4,7 +4,7 @@
 
 ### Domain model:
 
-![Domain model](images/banktest.jpg "Bank tech test domain model")
+![Domain model](images/bank_test.png "Bank tech test domain model")
 
 ### User stories
 
