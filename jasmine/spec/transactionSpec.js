@@ -35,7 +35,7 @@ describe("Transaction", function() {
   describe("#date", function() {
 
     it("saves the time", function() {
-      expect(deposit.date()).toEqual('01/01/1999');
+      expect(deposit.getTransactionDate()).toEqual('01/01/1999');
     });
 
   });

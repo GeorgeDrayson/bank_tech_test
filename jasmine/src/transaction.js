@@ -14,7 +14,7 @@ Transaction.prototype.getBalance = function() {
   return this._balance
 }
 
-Transaction.prototype.date = function() {
+Transaction.prototype.getTransactionDate = function() {
   return formatter.format(date.getDate()) + "/" + formatter.format(date.getMonth())
    + "/" + date.getFullYear()
 }
