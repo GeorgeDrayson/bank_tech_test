@@ -1,6 +1,9 @@
+'use strict';
+
 function Account(transactionClass = Transaction) {
   this._statement = []
-  this._balance = 0
+  const defaultBalance = 0
+  this._balance = defaultBalance
   this._transactionClass = Transaction
 }
 

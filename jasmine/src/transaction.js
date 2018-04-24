@@ -1,3 +1,5 @@
+'use strict';
+
 function Transaction(
   amount, balance, formatter=new DateFormatter(), date=new Date()) {
   this._amount = amount
