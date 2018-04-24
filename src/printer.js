@@ -17,7 +17,7 @@ Printer.prototype._sortStatement = function(account) {
   for (i = 0; i < account.getStatement().length; i++) {
     var transaction = account.getStatement()[i]
     var row =
-    [transaction.transactionDate(), transaction.debit(), transaction.credit(),
+    [transaction.transactionDate(), transaction.credit(), transaction.debit(),
     transaction.getBalance().toFixed(this._decimalPlaces)].join(' || ')
     this._formattedStatement.push(row);
   }

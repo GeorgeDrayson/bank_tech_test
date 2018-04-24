@@ -1,7 +1,7 @@
 'use strict';
 
 function Transaction(
-  amount, balance, formatter=new DateFormatter(), date=new Date()) {
+  amount, balance, formatter = new DateFormatter(), date = new Date()) {
   this._amount = amount
   this._balance = balance
   this._date = date

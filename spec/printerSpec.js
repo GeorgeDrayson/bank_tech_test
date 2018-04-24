@@ -7,14 +7,14 @@ describe("Printer", function() {
   beforeEach(function() {
     printer = new Printer()
     transaction1 = jasmine.createSpyObj('transaction1', {
-      'credit': null,
-      'debit': '1000.00',
+      'credit': '1000.00',
+      'debit': null,
       'getBalance' : 1000.00,
       'transactionDate' : '10/01/2012'
     });
     transaction2 = jasmine.createSpyObj('transaction2', {
-      'credit': null,
-      'debit': '2000.00',
+      'credit': '2000.00',
+      'debit': null,
       'getBalance' : 3000.00,
       'transactionDate' : '13/01/2012'
     });
@@ -28,7 +28,7 @@ describe("Printer", function() {
     it("Formats it correctly", function() {
       expect(printer.printStatement(account)).toEqual(
       'date || credit || debit || balance\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00'
-      );
+      )
     });
 
   });

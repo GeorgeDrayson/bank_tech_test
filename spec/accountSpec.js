@@ -5,22 +5,6 @@ describe("Account", function() {
     account = new Account()
   });
 
-  describe("#getStatement", function() {
-
-    it("Statement is empty at the start", function() {
-      expect(account.getStatement()).toEqual([])
-    });
-
-  });
-
-  describe("#getBalance", function() {
-
-    it("Balance is zero at the start", function() {
-      expect(account.getBalance()).toEqual(0)
-    });
-
-  });
-
   describe("#deposit", function() {
 
     beforeEach(function() {
