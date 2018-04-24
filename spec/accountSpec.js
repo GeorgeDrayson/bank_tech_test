@@ -35,6 +35,12 @@ describe("Account", function() {
       expect(account.getStatement().length).toEqual(1);
     });
 
+    it("Throws an error if you try to deposit a negative amount", function() {
+      expect(function(){account.deposit(-10);}
+    ).toThrowError('You cannot deposit a negative amount')
+    });
+
+
   });
 
   describe("#withdraw", function() {
@@ -55,6 +61,11 @@ describe("Account", function() {
     it("Throws an error if you take more than you can", function() {
       expect(function(){account.withdraw(1000);}
       ).toThrowError('Insufficient funds')
+    });
+
+    it("Throws an error if you try to withdraw a negative amount", function() {
+      expect(function(){account.withdraw(-10);}
+    ).toThrowError('You cannot withdraw a negative amount')
     });
 
   });

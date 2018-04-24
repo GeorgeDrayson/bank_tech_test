@@ -10,14 +10,6 @@ describe("Transaction", function() {
     withdrawal = new Transaction(-1000, 0, fakeFormatter);
   });
 
-  describe("#getBalance", function() {
-
-    it("Returns the balance at the time", function() {
-      expect(deposit.getBalance()).toEqual(1000);
-    });
-
-  });
-
   describe("#transactionDate", function() {
 
     it("Saves the time", function() {

@@ -16,11 +16,13 @@ Account.prototype.getBalance = function() {
 }
 
 Account.prototype.deposit = function(amount) {
+  if (amount < 0) { throw new Error('You cannot deposit a negative amount') }
   this._balance += amount
   this._statement.push(new this._transactionClass(amount, this._balance))
 }
 
 Account.prototype.withdraw = function(amount) {
+  if (amount < 0) { throw new Error('You cannot withdraw a negative amount') }
   if (this._balance - amount < 0) { throw new Error('Insufficient funds') }
   amount = -amount
   this._balance += amount
