@@ -4,10 +4,11 @@ describe("DateFormatter", function() {
 
 
   beforeEach(function() {
-    fakeDate = jasmine.createSpyObj('fakeDate',['getDate','getMonth','getFullYear']);
-    fakeDate.getDate.and.returnValue(1);
-    fakeDate.getMonth.and.returnValue(1);
-    fakeDate.getFullYear.and.returnValue(1999);
+    fakeDate = jasmine.createSpyObj('fakeDate', {
+      'getDate': 1,
+      'getMonth': 1,
+      'getFullYear' : 1999
+    });
     dateFormatter = new DateFormatter()
   });
 

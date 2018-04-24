@@ -1,7 +1,6 @@
 'use strict';
 
 function DateFormatter() {
-
 }
 
 DateFormatter.prototype.format = function(integer) {

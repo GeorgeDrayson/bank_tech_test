@@ -21,10 +21,8 @@ Account.prototype.deposit = function(amount) {
 }
 
 Account.prototype.withdraw = function(amount) {
+  if (this._balance - amount < 0) { throw new Error('Insufficient funds') }
   amount = -amount
-  if (this._balance + amount < 0) {
-    throw new Error('Insufficient funds')
-  }
   this._balance += amount
   this._statement.push(new this._transactionClass(amount, this._balance))
 }

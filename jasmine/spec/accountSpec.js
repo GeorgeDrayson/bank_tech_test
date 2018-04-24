@@ -7,7 +7,7 @@ describe("Account", function() {
 
   describe("#getStatement", function() {
 
-    it("Balance is zero at the start", function() {
+    it("Statement is empty at the start", function() {
       expect(account.getStatement()).toEqual([])
     });
 
