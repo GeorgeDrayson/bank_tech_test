@@ -1,8 +1,9 @@
 'use strict';
 
 function Transaction(
-  amount, balance, formatter = new DateFormatter(), date = new Date()) {
-  this._amount = amount
+  credit, debit, balance, formatter = new DateFormatter(), date = new Date()) {
+  this._credit = credit
+  this._debit = debit
   this._balance = balance
   this._date = date
   this._formatter = formatter
@@ -10,13 +11,11 @@ function Transaction(
 }
 
 Transaction.prototype.credit = function() {
-  if (this._amount > 0) { return (this._amount.toFixed(this._decimalPlaces)) }
-  else { return null }
+  if (this._credit) { return this._credit.toFixed(this._decimalPlaces) }
 }
 
 Transaction.prototype.debit = function() {
-  if (this._amount < 0) { return (- this._amount).toFixed(this._decimalPlaces) }
-  else { return null }
+  if (this._debit) { return this._debit.toFixed(this._decimalPlaces) }
 }
 
 Transaction.prototype.getBalance = function() {
